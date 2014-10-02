@@ -1,0 +1,220 @@
+<!doctype html> 
+<html>
+<head>
+  <!-- new page -->
+  <title>Amy Brown: Freelance Editing and Book Production</title>
+   <link rel="stylesheet" href="../amyrbrown.css" type="text/css" />
+    <!-- Alexa verification code: rIl32zPaqkEdFPbSJ1TxMqMif_Q -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-38939900-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+    </script>
+</head>
+<body>
+  <ul class="menu">
+    <li><a href="../editing.html">Editing</a></li>
+    <li><a href="../bookproduction.html">Book Production</a></li>
+    <li><a href="../about.html">About Me</a></li>
+    <li><a href="../articles.html">Articles</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <section class="banner">
+    <a href="../index.html"><img class="logo" 
+      src="../images/logo_small.jpg"></a>
+    <h1>Editing and Custom Book Production</h1>
+  </section>
+
+  <section class="content box">
+    <h2 id="top">LaTeX to Lulu: The Making of AOSA</h2>
+    <p>
+      The two volumes of <a href="http://www.aosabook.org"><em>The Architecture
+      of Open Source Applications</em></a> were typeset with LaTeX and printed
+      through <a href="http://www.lulu.com/">Lulu</a>. If you're publishing
+      through Lulu or another self-publisher and you want to create a polished
+      book without spending the earth on a desktop publishing package, LaTeX is
+      a good choice. It provides a professional result and it's infinitely
+      customizable&thinsp;&mdash;&thinsp;if you have the time and patience to
+      put it together and the experience to figure out how. I couldn't have
+      finished the <em>AOSA</em> books without the generosity of people all
+      over the world who posted their LaTeX tips to forums and blogs. This
+      series of articles pays some of that back by sharing what 
+      <a href="http://www.third-bit.com">Greg Wilson</a> and I learned.
+    </p>
+    <p class="aside">
+      Note: The articles were originally posted on a blog, but I have since
+      decided they should be available on my website. While I'm in the 
+      process of transferring them over, you can <a
+      href="http://amyrhoda.wordpress.com/2012/05/25/latex-to-lulu-the-making-of-aosa-geometry-and-headers-and-footers/">read
+      them on the blog</a>.
+    </p>
+    <h3>Contents</h3>
+    <ol>
+      <li><strong>Geometry and Headers and Footers</strong></li>
+      <li>Fonts and Captions (coming soon)</li>
+      <li>Table of Contents and Chapter Title Pages (coming soon)</li>
+      <li>Custom Commands and Environments (coming soon)</li>
+      <li>Other Useful Packages and Settings (coming soon)</li>
+      <li>Pulling It All Together (coming soon)</li>
+      <!--
+      <li><a href="280512-latex-fonts-and-captions.html">Fonts and 
+          Captions</a></li>
+      <li><a href="300512-latex-toc-chapter-titles.html">Table of Contents 
+           and Chapter Title Pages</a></li>
+      <li><a href="010612-latex-custom-commands-and-environments.html">Custom 
+           Commands and Environments</a></li>
+      <li><a href="040612-latex-useful-packages-and-settings/">Other Useful 
+             Packages and Settings</a></li>
+      <li><a href="070612-latex-pulling-it-all-together/">Pulling It All 
+             Together</a></li>-->
+     </ol>
+    <h3>Geometry and Headers and Footers</h3>
+     <p>
+      This article is about specifying the size of the book, and setting up
+      headers and footers.
+    </p>
+    <h4>Book Size and Margins</h4>
+    <p>
+      First, we used the <code>book</code> document class, which allows
+      chapters and two-sided printing by default.
+    </p>
+    <div class="code">
+      \documentclass{book}
+    </div>
+    <p>
+      We used the <code>geometry</code> package to define the size of the book,
+      and the margins.
+    </p>
+    <div class="code">\usepackage[includefoot]{geometry}</div>
+    <p>
+      The <code>includefoot</code> option tells LaTeX that the footer should
+      come within the textblock (that is, the footer isn't in the bottom
+      margin). There's an <code>includehead</code> option, but we didn't have a
+      running header.
+    </p>
+    <p>
+      Later in the preamble we define the size of the book:
+    </p>
+    <div class="code">
+      % define page size and margins etc<br />
+      \geometry{paperwidth=18.91cm,paperheight=24.589cm,<br />
+      vmargin=1.9cm, % top and bottom margins<br />
+      inner=1.9cm, % inside margin<br />
+      outer=2.29cm, % outside margin<br />
+      bindingoffset=0.89cm % gutter<br />
+      }</div>
+    <p>
+      Lulu has a whole host of book sizes, but <code>geometry</code> makes this
+      one of the easiest parts of the layout job. We used Lulu's Crown Quarto
+      size, and I set the margins to exactly match the MS Word template that
+      Lulu provides.
+    </p>
+    <p>
+      I realized later that I didn't need to stick so closely to that template,
+      but those settings kept me safely within the <a
+      href="http://connect.lulu.com/t5/ISBN-Distribution/Mandatory-Requirements-for-Print-Books-with-Distribution/ta-p/33632">extended
+      distribution requirements</a>, which are the requirements your book must
+      meet to be distributed on Amazon.
+    </p>
+
+    <h4>Setting Up Headers and Footers</h4>
+    <p>
+      The <code>fancyhdr</code> package gives you control over the style of
+      your footers and headers.
+    </p>
+    <div class="code">\usepackage{fancyhdr} % to format headers/footers</div>
+    <p>
+      Setting <code>pagestyle</code> to <code>fancy</code> tells LaTeX you want
+      to use <code>fancyhdr</code>.
+    </p>
+    <div class="code">\pagestyle{fancy}</div>
+    <p>
+      Here's a tricky bit, and I confess some of this I don't really understand
+      myself&thinsp;&mdash;&thinsp;I copied it from the Internet and hoped for
+      the best.
+    </p>
+    <div class="code">
+      %% fiddle with chaptermark so we can make it not all caps<br />
+      \renewcommand{\chaptermark}[1]{\markboth{#1}{}}<br />
+      \renewcommand{\sectionmark}[1]{\markright{#1}{}}</div>
+    <p>
+      I'm not sure why those two lines make footers not all caps, but that's
+      what the Internet said and it seemed to work.
+    </p>
+    <p>
+      Next I define the header and footer to be empty, and get rid of the line
+      that LaTeX puts under the header:
+    </p>
+    <div class="code">
+      %% next get rid of existing header and footer and header rule<br />
+      \fancyhead{}<br />
+      \fancyfoot{}<br />
+      \renewcommand{\headrulewidth}{0pt}</div>
+    </p>
+    <p>
+      Now that we've got a blank slate, here's where we define the footer:
+    </p>
+    <div class="code">
+      % now make the footer the way we want it:<br />
+      % page number on right side of footer for odd pages<br />
+      \rfoot[]{\small{\textsf{\chapterauthor \hspace{0.25cm} \thepage}}}<br />
+      <br />
+      % the following looks like it doesn't do anything, but<br />
+      % it seems to remind it to line up headers with the<br />
+      % rest of the text:<br />
+      \fancyhfoffset[EL]{0cm} <br />
+      <br />
+      % page number and chapter name on left side of footer for even pages<br />
+      \lfoot[\small{\textsf{\thepage \hspace{0.25cm} \leftmark}}]{}</div>
+    <p>
+      We have the page number and chapter name on the left pages, and the
+      author name and page number on the right, all in sans-serif font. Why? I
+      thought it looked nice.
+    </p>
+
+    <h4>Footnotes</h4>
+    <p>
+      We didn't do much with footnotes&thinsp;&mdash;&thinsp;the default way
+      LaTeX handles them
+      worked for us. We did change one thing: LaTeX treats footnotes as a
+      paragraph and indents the first line, but since many of our footnotes are
+      simply URls, they are less than one line long and it looked weird to have
+      them indented. So I used the <code>footmisc</code> package:
+    </p>
+    <div class="code">\usepackage[hang,flushmargin]{footmisc}  % To not indent footnotes</div>
+    <p>
+      The <code>footmisc</code> package provides an assortment of ways to style
+      footnotes. The <code>hang</code> option sets the footnote flush with the
+      margin rather than indenting it.
+    </p>
+    <p>
+      The <code>flushmargin</code> option places the footnote marker; the
+      documentation says it "sets the footnote marker flush with, but just
+      inside the margin from, the text of the footnote". I'm not exactly sure
+      what that means, but I like the way our footnotes look so I left it.
+    </p>
+    <p>
+    <a href="#top">Top</a> | Next article: <a href="160512-latex-fonts-and-captions.html">Fonts and 
+      Captions</a>.
+   </p>
+  </section>
+
+  <section id="contact" class="content box">
+    <script language="JavaScript">
+      var username = "amy";
+      var hostname = "amyrbrown.ca";
+      var emailicon = "../images/email.png";
+      document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "'><img src='" + emailicon + "'></a>");
+    </script>
+    <a href="https://twitter.com/amyrbrown"><img src="../images/twitter.png"></a>
+    <a href="http://ca.linkedin.com/in/amyrbrown/"><img src="../images/linkedin.png"></a>
+  </section>
+</body>
+</html>
