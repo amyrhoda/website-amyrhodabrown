@@ -1,9 +1,12 @@
 <!doctype html> 
 <html>
 <head>
-  <!-- new page -->
+  <!--#include virtual="../include/head.html" -->
+<!-- BEGIN included file: include/head.html -->
+
   <title>Amy Brown: Freelance Editing and Book Production</title>
    <link rel="stylesheet" href="../amyrbrown.css" type="text/css" />
+
     <!-- Alexa verification code: rIl32zPaqkEdFPbSJ1TxMqMif_Q -->
     <script type="text/javascript">
 
@@ -17,31 +20,23 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
        })();
     </script>
+
+<!-- END included file: include/head.html -->
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="../editing.html">Editing</a></li>
-    <li><a href="../bookproduction.html">Book Production</a></li>
-    <li><a href="../about.html">About Me</a></li>
-    <li><a href="../articles.html">Articles</a></li>
-    <li><a href="../contact.html">Contact</a></li>
-  </ul>
-  <section class="banner">
-    <a href="../index.html"><img class="logo" 
-      src="../images/logo_small.jpg"></a>
-    <h1>Editing and Custom Book Production</h1>
-  </section>
+  <!--#include virtual="../include/nav.html" -->
+  <!--#include virtual="../include/banner.html" -->
 
   <section class="content box">
     <h2 id="top">Latex to Lulu: The Making of AOSA</h2>
     <p class="pubdate">Originally posted: May 28, 2012</p>
 
     <h3>Contents</h3>
+    
     <ol class="toc">
       <li><a href="250512-latex-geometry.html">Geometry and Headers and
       Footers</a></li>
-      <li><strong>Fonts and 
-          Captions</strong></li>
+      <li><strong>Fonts and Captions</strong></li>
       <li>Table of Contents and Chapter Title Pages (coming soon)</li>
       <li>Custom Commands and Environments (coming soon)</li>
       <li>Other Useful Packages and Settings (coming soon)</li>
@@ -56,7 +51,7 @@
       <li><a href="070612-latex-pulling-it-all-together/">Pulling It All 
              Together</a></li>-->
      </ol>
-</ol>
+
       <p>
       This article is about specifying fonts and captions in LaTeX.
       </p>
@@ -98,9 +93,15 @@
       </p>
 
       <h4>Captions and Other Text Tweaks</h4>
-  I made a few changes to LaTeX's default behaviour in terms of typefaces.
-
-  The default in LaTeX is for caption copy to be the same size as the body text. We used the <code>caption</code> package to make it smaller, which helps differentiate long captions from the surrounding text.
+      <p>
+        We made a few changes to LaTeX's default behaviour in terms of
+        typefaces.
+      </p>
+      <p>
+        The default in LaTeX is for caption copy to be the same size as the
+        body text. We used the <code>caption</code> package to make it smaller,
+        which helps differentiate long captions from the surrounding text.
+      </p>
   <div class="code">\usepackage[small]{caption}  % make caption text size smaller</div>
   I also found there was too much space above and below captions by default, so I used <code>setlength</code> to tighten it up a little:
   <div class="code">%% Make the space above and below captions smaller
@@ -122,15 +123,6 @@
      </p>
     </section>
 
-    <section id="contact" class="content box">
-      <script language="JavaScript">
-        var username = "amy";
-        var hostname = "amyrbrown.ca";
-        var emailicon = "../images/email.png";
-        document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "'><img src='" + emailicon + "'></a>");
-      </script>
-      <a href="https://twitter.com/amyrbrown"><img src="../images/twitter.png"></a>
-      <a href="http://ca.linkedin.com/in/amyrbrown/"><img src="../images/linkedin.png"></a>
-    </section>
+  <!--#include virtual="../include/footer.html" -->
   </body>
   </html>
