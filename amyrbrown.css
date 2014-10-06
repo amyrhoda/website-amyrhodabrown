@@ -38,8 +38,12 @@
       font-color: #b9c7d4;
       margin-top: 0px;
     }
-    p.article_nav {
+    p.article-nav {
+      border-top: dotted #b9c7d4 2px;
+      padding-top: 10px;
+      margin-top: 20px;
       text-align: center;
+      font-size: 80%;
     }
 
     li {

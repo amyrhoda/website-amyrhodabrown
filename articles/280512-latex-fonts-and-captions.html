@@ -89,7 +89,7 @@
         to, but I confess I still mostly do it by trial and error and what
         "looks good". There's a chance that I'll look at these books in five
         years and wonder what on earth made me choose these typefaces, but for
-        now I'm very happy with the way the books look.
+        now I'm very happy with the way they look.
       </p>
 
       <h4>Captions and Other Text Tweaks</h4>
@@ -102,24 +102,38 @@
         body text. We used the <code>caption</code> package to make it smaller,
         which helps differentiate long captions from the surrounding text.
       </p>
-  <div class="code">\usepackage[small]{caption}  % make caption text size smaller</div>
-  I also found there was too much space above and below captions by default, so I used <code>setlength</code> to tighten it up a little:
-  <div class="code">%% Make the space above and below captions smaller
-  \setlength{\abovecaptionskip}{1.2ex}
-  \setlength{\belowcaptionskip}{-1.5ex}</div>
-  I made section headers sans-serif because I wanted them to stand out, and for our sans-serif font to do a little more work.
-  <div class="code">% set all section headers to be sans-serif
-  \allsectionsfont{\normalfont\sffamily}</div>
-  The monospaced font we used, <a href="http://levien.com/type/myfonts/inconsolata.html">Inconsolata</a>, is a little larger than Termes at the same point size, so I set it a little smaller to look more graceful.
-  <div class="code">% make all verbatim (code blocks) text smaller, just because it was bugging me
-  \let\oldverbatim\verbatim
-  \renewcommand\verbatim{\small\oldverbatim}</div>
+      <div class="code">\usepackage[small]{caption}  % make caption text size smaller</div>
+      <p>
+        I also found there was too much space above and below captions by
+        default, so I used <code>setlength</code> to tighten it up a little:
       </p>
       <p>
-        Next article: Styling the Table of Contents and Chapter Title Pages 
+      <div class="code">
+        %% Make the space above and below captions smaller<br />
+\setlength{\abovecaptionskip}{1.2ex}<br />
+\setlength{\belowcaptionskip}{-1.5ex}</div>
+      </p>
       <p>
-      <a href="#top">Top</a> | Next article: <a href="160512-latex-fonts-and-captions.html">Fonts and 
-        Captions</a>.
+      I made section headers sans-serif because I wanted them to stand out, and
+      for our sans-serif font to do a little more work.
+      </p>
+      <div class="code">% set all section headers to be sans-serif<br>
+      \allsectionsfont{\normalfont\sffamily}</div>
+      <p>
+        The monospaced font we used, <a
+          href="http://levien.com/type/myfonts/inconsolata.html">Inconsolata</a>,
+        is a little larger than Termes at the same point size, so I set it 
+        smaller to look more graceful.
+      </p>
+      <div class="code">
+        % make all verbatim (code blocks) text smaller<br />
+        \let\oldverbatim\verbatim<br />
+        \renewcommand\verbatim{\small\oldverbatim}</div>
+
+      <p class="article-nav">
+      Previous article: <a href="250512-latex-geometry.html">Geometry, Headers and Footers</a> |
+      <a href="#top">Top</a> | 
+      Next article: <a href="300512-latex-toc-chapter-titles.html">Table of Contents and Chapter Title Pages</a>
      </p>
     </section>
 
