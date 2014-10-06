@@ -38,6 +38,9 @@
       font-color: #b9c7d4;
       margin-top: 0px;
     }
+    p.article_nav {
+      text-align: center;
+    }
 
     li {
       line-height: 1.2;
