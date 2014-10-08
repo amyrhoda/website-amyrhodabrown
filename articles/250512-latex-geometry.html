@@ -1,39 +1,15 @@
 <!doctype html> 
 <html>
 <head>
-  <!-- new page -->
-  <title>Amy Brown: Freelance Editing and Book Production</title>
-   <link rel="stylesheet" href="../amyrbrown.css" type="text/css" />
-    <!-- Alexa verification code: rIl32zPaqkEdFPbSJ1TxMqMif_Q -->
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-38939900-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-       })();
-    </script>
+  <!--#include virtual="../include/head.html" -->
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="../editing.html">Editing</a></li>
-    <li><a href="../bookproduction.html">Book Production</a></li>
-    <li><a href="../about.html">About Me</a></li>
-    <li><a href="../articles.html">Articles</a></li>
-    <li><a href="../contact.html">Contact</a></li>
-  </ul>
-  <section class="banner">
-    <a href="../index.html"><img class="logo" 
-      src="../images/logo_small.jpg"></a>
-    <h1>Editing and Custom Book Production</h1>
-  </section>
+  <!--#include virtual="../include/nav.html" -->
+  <!--#include virtual="../include/banner.html" -->
 
   <section class="content box">
     <h2 id="top">LaTeX to Lulu: The Making of AOSA</h2>
+    <h3 class="l2l">Geometry, Headers and Footers</h3>
     <p>
       The two volumes of <a href="http://www.aosabook.org"><em>The Architecture
       of Open Source Applications</em></a> were typeset with LaTeX and printed
@@ -205,15 +181,6 @@
    </p>
   </section>
 
-  <section id="contact" class="content box">
-    <script language="JavaScript">
-      var username = "amy";
-      var hostname = "amyrbrown.ca";
-      var emailicon = "../images/email.png";
-      document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "'><img src='" + emailicon + "'></a>");
-    </script>
-    <a href="https://twitter.com/amyrbrown"><img src="../images/twitter.png"></a>
-    <a href="http://ca.linkedin.com/in/amyrbrown/"><img src="../images/linkedin.png"></a>
-  </section>
+  <!--#include virtual="../include/footer.html" -->
 </body>
 </html>

@@ -20,6 +20,12 @@
     h3 {
       padding-top: 15px;
     }
+    h3.l2l {
+      padding-top: 12px;
+      font-size: 24px;
+      color: #A8258D;
+    }
+
     h1, h2, h3 {
       font-family: Helvetica, Arial, sans-serif;
     }
