@@ -10,6 +10,9 @@
       text-decoration:none;
       border-bottom: 1px dotted blue;
     }
+    a.img {
+      border: none;
+    }
 
     h1 {
       font-size: 48px;
@@ -60,7 +63,9 @@
     div.code {
       border: solid 1px; 
       padding: 10px; 
-      background: #eeeeee; font-family: courier;
+      background: #E1E7ED; 
+      font-family: courier;
+      font-size: 90%;
     }
 
     img.logo {
@@ -118,6 +123,7 @@
     }
 
     ol.toc {
+      margin-top: 5px;
       border-top: 2px double #415a68;
       border-bottom: 2px double #415a68;
       padding: 5px 0px 5px 35px;
