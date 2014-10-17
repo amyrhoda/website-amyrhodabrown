@@ -1,0 +1,57 @@
+<span style="color:#666699;">The two volumes of <a href="http://www.aosabook.org"><span style="color:#666699;"><em>The Architecture of Open Source Applications</em></span></a> were typeset with LaTeX and printed through <a href="http://www.lulu.com/"><span style="color:#666699;">Lulu</span></a>. I couldn't have finished the <em>AOSA</em> books without the generosity of people all over the world who posted their LaTeX tips to forums and blogs. This series of posts pays some of that back by sharing what I learned.</span>
+
+<span style="color:#666699;">This is the fourth post in the series.</span>
+<h4><span style="color:#666699;">LaTeX to Lulu</span></h4>
+<ol>
+	<li><span style="color:#666699;"><a href="http://amyrhoda.wordpress.com/2012/05/25/latex-to-lulu-the-making-of-aosa-geometry-and-headers-and-footers/"><span style="color:#666699;">Headers and Footers</span></a></span></li>
+	<li><span style="color:#666699;"><a title="LaTeX to Lulu, the Making of AOSA: Fonts and Captions" href="http://amyrhoda.wordpress.com/2012/05/28/latex-to-lulu-the-making-of-aosa-fonts-and-captions/"><span style="color:#666699;">Fonts and Captions</span></a></span></li>
+	<li><span style="color:#666699;"><a title="LaTeX to Lulu, The Making of AOSA: Table of Contents and Chapter Titles" href="http://amyrhoda.wordpress.com/2012/05/30/latex-to-lulu-the-making-of-aosa-table-of-contents-and-chapter-titles/"><span style="color:#666699;">Table of Contents and Chapter Title Pages</span></a></span></li>
+	<li><span style="color:#666699;"><a title="LaTeX to Lulu, the Making of AOSA: Custom Commands and Environments" href="http://amyrhoda.wordpress.com/2012/06/01/latex-to-lulu-the-making-of-aosa-custom-commands-and-environments/">Custom Commands and Environments</a></span></li>
+	<li><a title="LaTeX to Lulu, the Making of AOSA: Other Useful Packages and Settings" href="http://amyrhoda.wordpress.com/2012/06/04/latex-to-lulu-the-making-of-aosa-other-useful-packages-and-settings/"><span style="color:#666699;">Other Useful Packages and Settings</span></a></li>
+	<li><strong><span style="color:#666699;">Pulling It All Together</span></strong></li>
+</ol>
+This post is about the LaTeX that pulls the whole book together.<!--more-->
+
+I think I mentioned this before: we used the <code>book</code> document class, which allows chapters and two-sided printing by default. That's the very first line in our LaTeX file.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\documentclass{book}</pre>
+Then we include all the packages and set up all the settings and custom environments I've been posting about for days, and then finally...
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\begin{document}</pre>
+Whoo hoo!
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\frontmatter</pre>
+The <code>frontmatter</code> command is defined by the <code>book</code> class. It affects numbering, specifically setting the page numbers to Roman in the front matter.
+
+Then we include a file called <code>frontmatter.tex</code> which defines the half-title page, title page, and dedication.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\include{frontmatter}</pre>
+The <code>tableofcontents</code> command tells LaTeX to (guess what!) generate a table of contents.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\tableofcontents</pre>
+Then we include the <code>intro</code> file, which is our introduction and list of contributors.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\include{intro}</pre>
+<code>mainmatter</code> tells it to switch to Arabic numerals, then we include all the chapters.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\mainmatter
+\include{distsys}
+\include{ffreleng}
+\include{freertos}
+...
+\include{zeromq}</pre>
+Then we set the style of the bibliography. <code>alpha</code> means the labels for the bibliography entries are based on the the authors' initials and publication year, so an article by Donald Knuth published in 1986 would be labelled <strong>[Knu86]</strong>.
+
+The <code>bibliography</code> command tells LaTeX which file to use for the bibliography.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\bibliographystyle{alpha}
+\bibliography{aosa2}</pre>
+I copied this next bit from somewhere on the web because I wanted to get rid of the blank page after the bibliography, and honestly I'm not entirely sure how it works. <code>makeatletter</code> makes the <code>@</code> sign into a letter, for some reason. Then <code>@openrightfalse</code> does the no-blank-page magic, and <code>makeatother</code> returns <code>@</code> to its rightful status as whatever-it-is.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">%% This prevents LaTeX from adding a blank page after the bibliography
+\makeatletter
+\@openrightfalse
+\makeatother</pre>
+<code>backmatter</code> ends the main matter, and thus the page numbering. Then we include the colophon, and that's the end!
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\backmatter
+
+\include{colophon}
+
+\end{document}</pre>
+<h4>Resources</h4>
+I literally could not have made this book without the power of Google. (Well, I suppose there are books, but then you wouldn't be reading <em>our</em> book until 2015.) Some of the sites which popped up again and again were <a href="http://en.wikibooks.org/wiki/LaTeX">the LaTeX WikiBook</a>, <a href="http://stackoverflow.com/">Stack Overflow</a>, <a href="http://tex.stackexchange.com/">StackExchange's TeX site</a>, and the <a href="http://www.latex-community.org">LaTeX Community</a>. In particular, <a href="http://tex.stackexchange.com/users/213/stefan-kottwitz">Stefan Kottwitz</a> furnished so many helpful answers he practically earned a place in the acknowledgments.
+
+<hr width="40%" />
+
+Next time I'll write about some of the tools I used to manage the process of creating the book.

@@ -1,0 +1,55 @@
+<span style="color:#666699;">The two volumes of <a href="http://www.aosabook.org"><span style="color:#666699;"><em>The Architecture of Open Source Applications</em></span></a> were typeset with LaTeX and printed through <a href="http://www.lulu.com/"><span style="color:#666699;">Lulu</span></a>. I couldn't have finished the <em>AOSA</em> books without the generosity of people all over the world who posted their LaTeX tips to forums and blogs. This series of posts pays some of that back by sharing what I learned.</span>
+
+<span style="color:#666699;">This is the fourth post in the series.</span>
+<h4><span style="color:#666699;">LaTeX to Lulu</span></h4>
+<ol>
+	<li><span style="color:#666699;"><a href="http://amyrhoda.wordpress.com/2012/05/25/latex-to-lulu-the-making-of-aosa-geometry-and-headers-and-footers/"><span style="color:#666699;">Headers and Footers</span></a></span></li>
+	<li><span style="color:#666699;"><a title="LaTeX to Lulu, the Making of AOSA: Fonts and Captions" href="http://amyrhoda.wordpress.com/2012/05/28/latex-to-lulu-the-making-of-aosa-fonts-and-captions/"><span style="color:#666699;">Fonts and Captions</span></a></span></li>
+	<li><span style="color:#666699;"><a title="LaTeX to Lulu, The Making of AOSA: Table of Contents and Chapter Titles" href="http://amyrhoda.wordpress.com/2012/05/30/latex-to-lulu-the-making-of-aosa-table-of-contents-and-chapter-titles/"><span style="color:#666699;">Table of Contents and Chapter Title Pages</span></a></span></li>
+	<li><span style="color:#666699;"><a title="LaTeX to Lulu, the Making of AOSA: Custom Commands and Environments" href="http://amyrhoda.wordpress.com/2012/06/01/latex-to-lulu-the-making-of-aosa-custom-commands-and-environments/">Custom Commands and Environments</a></span></li>
+	<li><span style="color:#666699;"><strong>Other Useful Packages and Settings</strong></span></li>
+	<li><a title="LaTeX to Lulu, the Making of AOSA: Pulling It All Together" href="http://amyrhoda.wordpress.com/2012/06/07/latex-to-lulu-the-making-of-aosa-pulling-it-all-together/"><span style="color:#666699;">Pulling It All Together</span></a></li>
+</ol>
+This post rounds up some of the packages and settings I haven't talked about yet.
+
+<!--more-->To tell the truth LaTeX isn't meant to do this kind of custom typesetting; it was created to do the work of laying out a document for you so you could concentrate on the content. All this rearranging and customising and fiddling with layout is beside the point, which is why you have to include packages to design each different aspect of your document.
+
+The <code>epstopdf</code> package converts EPS images to PDF when you run LaTeX. We used this more in the first book; for some reason the authors for the second book submitted mostly PNG and PDF images, not EPSs.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\usepackage{epstopdf}</pre>
+I needed a package which would display URLs nicely, break them at the ends of lines properly, and ideally have them be clickable in the final PDF.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\usepackage[hyphens]{url} % this package doesn't make proper clickable
+                          % links, but
+% \usepackage{hyperref} % this package breaks the build.</pre>
+I tried both the <code>url</code> and the <code>hyperref</code> packages, and while the <code>hyperref</code> package promised to do what I wanted, it stopped the book from compiling properly. The <code>url</code> package did everything I wanted except make clickable links, so I left it in and commented out the other, thinking I would come back and figure it out later. Ha.
+
+The <code>microtype</code> package provides the ability to <em>micro</em>manage your <em>typ</em>ography. When invoked without any options it does some nice things like protruding punctuation over the edge of the right margin to make the margin appear smoother. Basically it makes your book look more professional with very little effort. It also has a ton of options if you want to micromanage even more.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\usepackage{microtype}</pre>
+The <code>amssymb</code> package allows use of some math symbols.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\usepackage{amssymb}</pre>
+The <code>sectsty</code> package allowed me to change the font of the section headers.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\usepackage{sectsty}</pre>
+The <code>mathtools</code> package allowed one of our authors to display a matrix. This is one of several packages which were only used in one place in the book.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\usepackage{mathtools} % for bmatrix in matplotlib</pre>
+<code>enumitem</code> is the package that allowed me to set all the spacing options in our custom list environments.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\usepackage{enumitem}  % to manage spacing in and around lists</pre>
+The <code>multicol</code> package is another we only used once; we thank a long list of reviewers in the introduction, and I wanted to format the list without using a table. Using a table would mean I'd have to decide where to break the columns (and possibly change it every time we added a name), whereas with <code>multicol</code> LaTeX does the work of flowing the names evenly into three columns.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\usepackage{multicol} % to break the list of reviewers into columns</pre>
+Then I just called it like this:
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\begin{multicols}{3}
+list \\
+of \\
+names...
+\end{multicols}</pre>
+You probably know that widows and orphans are single lines separated over a page break from the rest of their paragraph. They make text harder to read, so LaTeX will get rid of them for you if you set a high enough penalty.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">% introduce penalty for widows and orphans (can increase to 10 000, although
+% not recommended)
+% upped the widow/orphan penalty to 600 from 300; seems to have removed
+% all widows and orphans -- ARB Mar 30 2012
+\widowpenalty=600
+\clubpenalty=600</pre>
+LaTeX does hyphenation for you, and it generally does a pretty good job, but sometimes you have to tell it about unusual words. The <code>hyphenate</code> command takes a list of words with accepted hyphenation. I ended up only passing it one word.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">% list of hard-to-hyphenate words with correct possible hyphenation-points
+\hyphenation{Free-RTOS}</pre>
+By dafault, LaTeX will try and make all your pages the length that you set using the <code>geometry</code> setting. If a page has images, tables, headings or paragraph breaks which make it shorter than that page length, LaTeX will pad the page by adding whitespace between elements. We thought that looked sillier than having pages be different lengths, so we used the <code>raggedbottom</code> command.
+<pre style="border:solid 1px;padding:10px;background:#eeeeee;">\raggedbottom</pre>
+Next time I will talk about the LaTeX which actually generates the book, and about some of the resources I used to find all this myself.
