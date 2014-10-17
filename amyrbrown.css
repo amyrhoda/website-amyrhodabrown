@@ -29,6 +29,10 @@
       font-size: 24px;
       color: #A8258D;
     }
+    h4 {
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
 
     h1, h2, h3 {
       font-family: Helvetica, Arial, sans-serif;
@@ -146,6 +150,7 @@
     }
     dl.articles ol {
       margin-top: 10px;
+      margin-right: 20px;
       line-height: 2;
       font-size: 90%;
     }
