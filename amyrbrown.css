@@ -181,6 +181,17 @@
       border: none;
     }
 
+    section#edca {
+      clear: left;
+      text-align: center;
+    }
+    section#edca img {
+      width: 200px;
+    }
+    section#contact a {
+      border: none;
+    }
+
     section.box {
       padding: 25px 250px;
     }
