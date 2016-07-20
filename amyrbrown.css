@@ -100,12 +100,19 @@
 
     ul.roles {
       border: 1px dotted #000;
+      padding-left: 0px;
     }
 
     ul.roles li {
       margin-left: 0;
-      padding-left: 0;
+      padding-left: 1em;
       border-left: 1px solid #000;
+      display: inline-block;
+    }
+    ul.roles li.first {
+      margin-left: 0;
+      padding-left: 1em;
+      border-left: none;
       display: inline-block;
     }
 
