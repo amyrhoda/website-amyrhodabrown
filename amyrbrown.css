@@ -99,7 +99,11 @@
     }
 
     ul.roles li {
+      margin-left: 0px;
+      padding-left: 1em;
+      border: 1px dotted #000;
       display: inline-block;
+      list-style-type: '—';
     }
 
     section.banner {
