@@ -98,6 +98,10 @@
       width: 200px;
     }
 
+    ul.roles li {
+      display: inline-block;
+    }
+
     section.banner {
       padding-top: 70px;
       padding-bottom: 20px;
