@@ -102,6 +102,11 @@
       padding-left: 0px;
       font-style: italic;
     }
+    ul.roles a {
+      border: none;
+      text-decoration: none;
+      color: #ffffff;
+    }
 
     ul.roles li {
       margin-left: 0.5em;
