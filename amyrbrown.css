@@ -8,7 +8,7 @@
     a:link{
       color:#0096D7;
       text-decoration:none;
-      border-bottom: 1px dotted blue;
+      border-bottom: none;
     }
     a.img {
       border: none;
@@ -73,7 +73,7 @@
 
     img.logo {
       margin: 0 auto;
-      display: block;
+      display: inline-block;
     }
     img.profile {
       border: 1px solid grey;
@@ -221,9 +221,10 @@
       padding: 25px 250px;
     }
     section.box h2 {
-      color: #A8258D;
-      margin: 5px 0px;
+      color: #C5487B;
+      margin: 0px 0px;
       text-align: left;
+      font-size: large;
     }
     section.box h3 {
       margin-top: 30px 0px;
