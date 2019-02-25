@@ -86,20 +86,6 @@
       float: left;
       margin-right: 20px;
     }
-    img.cover-left {
-      padding-left: 0px;
-      padding-right: 10px;
-      padding-top: 0px;
-      padding-top: 0px;
-      width: 200px;
-    }
-    img.cover-right {
-      padding-left: 10px;
-      padding-right: 0px;
-      padding-top: 0px;
-      padding-top: 0px;
-      width: 200px;
-    }
 
     ul.roles {
       padding-left: 0px;
@@ -136,6 +122,9 @@
     }
     section.banner p {
       font-size: 22px;
+    }
+    section.banner img {
+      width: 200px;
     }
     section.banner h1 {
       font-size: 18px;
