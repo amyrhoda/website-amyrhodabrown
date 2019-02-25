@@ -130,7 +130,7 @@
       background-color: #ffffff;
       background-attachment: fixed;
       color: #439f46;
-      text-align: center;
+      text-align: left;
     }
     section.banner p {
       font-size: 22px;
@@ -142,16 +142,6 @@
       color: #439f46;
     }
 
-    section.project {
-      border-bottom: 1px solid black;
-      padding: 50px 0px 20px 0px;
-      overflow: hidden;
-    }
-    section.project h4 {
-      valign: top;
-      margin: 0px;
-      line-height: 1.4;
-    }
 
     ol.toc {
       margin-top: 5px;
@@ -224,7 +214,7 @@
       padding: 25px 250px;
     }
     section.box h2 {
-      color: #4e8a3c;
+      color: #439f46;
       margin: 0px 0px;
       text-align: left;
       font-size: large;
