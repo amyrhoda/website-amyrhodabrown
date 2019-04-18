@@ -125,11 +125,12 @@
     }
     section.banner img {
       width: 200px;
+      float: left;
     }
     section.banner h1 {
       font-size: 18px;
       text-transform: uppercase;
-      margin: 0px;
+      padding-top: 10px;
       color: #439f46;
     }
 
