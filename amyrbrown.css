@@ -245,6 +245,9 @@
       line-height:1.4em;
     }
 
+    span.asterisk {
+      color: #ed1558;
+      }
 
     .menu {
       list-style: none;
