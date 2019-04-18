@@ -245,9 +245,44 @@
       line-height:1.4em;
     }
 
+    /* Mailchimp Styles */
+
     span.asterisk {
       color: #ed1558;
       }
+
+    div.mc-field-group {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      }
+
+    div#mc_embed_signup_scroll {
+      margin-bottom: 25px;
+      }
+
+    .input-group li {
+      display: inline-block;
+    }
+    .input-group ul {
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+    .input-group input {
+      margin-right: 5px;
+    }
+    .input-group label {
+      padding-right: 10px;
+    }
+
+    #mc-embedded-subscribe.button {
+      background-color: #439f46;
+      color: #ffffff;
+      padding: 8px;
+      border: 4px solid #446b34;
+      border-radius: 4px;
+      }
+
+    /* End of Mailchimp Styles */
 
     .menu {
       list-style: none;
