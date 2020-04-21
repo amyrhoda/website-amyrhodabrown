@@ -209,6 +209,11 @@
       border: none;
     }
 
+    section.links {
+      padding: 25px 250px;
+      color: #ff0000;
+    }
+
     section.box {
       padding: 25px 250px;
     }
