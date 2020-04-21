@@ -210,8 +210,9 @@
     }
 
     section.links {
+      color: #439f46;
       padding: 25px 250px;
-      color: #ff0000;
+      font-size: big;
     }
 
     section.box {
