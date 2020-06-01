@@ -25,11 +25,11 @@ layout: none
     <p>
     "I have twenty years of cross-sector experience in technology,
     communications, and research, as an employee and as an entrepreneur."
+    </p>
     <p>
     That's the LinkedIn version &mdash; doesn't it sound great? Twenty years!
     </p>
     <p>
-    
     But the reality is, my path didn't seem so clear when I was living
     through it.  Like most of us, I just tried to make the best choices
     with the resources available to me.
