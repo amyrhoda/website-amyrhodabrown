@@ -1,7 +1,6 @@
 ---
 layout: none
 ---
-<!doctype html> 
 <html>
 <head>
   {% include head.html %}
