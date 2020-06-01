@@ -1,12 +1,12 @@
 <!doctype html> 
 <html>
 <head>
-  {% include include/head.html %}
+  {% include head.html %}
 </head>
 
 <body>
-  {% include include/nav.html %}
-  {% include include/banner.html %}
+  {% include nav.html %}
+  {% include banner.html %}
 
   <section class="content box">
 
