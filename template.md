@@ -5,14 +5,20 @@ layout: none
 <head>
   {% include head.html %}
 </head>
-
 <body>
   {% include nav.html %}
   {% include banner.html %}
 
   <section class="content box">
-    <h2 id="top">LaTeX to Lulu: The Making of AOSA</h2>
-    <h3 class="l2l">$SUB_HEADING</h3>
-    <p class="pubdate">Originally posted: $DATE</p>
-    $CONTENT
+    <h2>$HEADING</h2>
+    <p>
+       $CONTENT 
+     </p>
+  </section>
 
+
+
+  {% include footer.html %}
+
+</body>
+</html>

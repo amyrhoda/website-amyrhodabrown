@@ -1,7 +1,9 @@
-<!doctype html> 
+---
+layout: none
+---
 <html>
 <head>
-  <!--#include virtual="include/head.html" -->
+  {% include head.html %}
 </head>
 
 <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
@@ -82,7 +84,7 @@
 
   </section>
 
-  <!--#include virtual="include/footer.html" -->
+  {% include footer.html %}
 
 </body>
 </html>
