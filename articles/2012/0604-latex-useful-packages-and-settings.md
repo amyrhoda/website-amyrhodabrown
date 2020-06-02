@@ -1,12 +1,14 @@
-<!doctype html> 
+---
+layout: none
+---
 <html>
 <head>
-  <!--#include virtual="/include/head.html" -->
+  {% include head.html %}
 </head>
 
 <body>
-  <!--#include virtual="/include/nav.html" -->
-  <!--#include virtual="/include/banner.html" -->
+  {% include nav.html %}
+  {% include banner.html %}
 
   <section class="content box">
     <h2 id="top">LaTeX to Lulu: The Making of AOSA</h2>
@@ -113,7 +115,7 @@ The <code>multicol</code> package is another we only used once; we thank a long 
    </p>
   </section>
 
-  <!--#include virtual="../include/footer.html" -->
+  {% include footer.html %}
 
 </body>
 </html>

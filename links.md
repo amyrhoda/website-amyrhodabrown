@@ -1,7 +1,9 @@
-<!doctype html> 
+---
+layout: none
+---
 <html>
 <head>
-  <!--#include virtual="include/head.html" -->
+  {% include head.html %}
 </head>
 
 
@@ -20,7 +22,7 @@
      </section> 
   </section>
 
-  <!--#include virtual="include/footer.html" -->
+  {% include footer.html %}
 
 </body>
 </html>

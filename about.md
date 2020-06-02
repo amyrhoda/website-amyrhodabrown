@@ -1,12 +1,14 @@
-<!doctype html> 
+---
+layout: none
+---
 <html>
 <head>
-  <!--#include virtual="include/head.html" -->
+  {% include head.html %}
 </head>
 
 <body>
-  <!--#include virtual="include/nav.html" -->
-  <!--#include virtual="include/banner.html" -->
+  {% include nav.html %}
+  {% include banner.html %}
 
   <section id="about" class="content box">
     <img class="profile-right" src="img/amy-cropped-window_lean.JPG" alt="Amy Brown (headshot)" width="200px">
@@ -23,11 +25,11 @@
     <p>
     "I have twenty years of cross-sector experience in technology,
     communications, and research, as an employee and as an entrepreneur."
+    </p>
     <p>
     That's the LinkedIn version &mdash; doesn't it sound great? Twenty years!
     </p>
     <p>
-    
     But the reality is, my path didn't seem so clear when I was living
     through it.  Like most of us, I just tried to make the best choices
     with the resources available to me.
@@ -111,6 +113,6 @@
 
   </section>
 
-  <!--#include virtual="include/footer.html" -->
+  {% include footer.html %}
 </body>
 </html>

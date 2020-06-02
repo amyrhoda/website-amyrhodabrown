@@ -1,12 +1,14 @@
-<!doctype html> 
+---
+layout: none
+---
 <html>
 <head>
-  <!--#include virtual="include/head.html" -->
+  {% include head.html %}
 </head>
 
 <body>
-  <!--#include virtual="include/nav.html" -->
-  <!--#include virtual="include/banner.html" -->
+  {% include nav.html %}
+  {% include banner.html %}
 
   <section class="box contact">
     <h2>Contact Me</h2>
